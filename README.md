@@ -30,39 +30,54 @@ Downside: LaTeX in post title is no longer supported.
 
 ### Site parameters
 
-`params` for this theme are:
+``` yaml
+params:
+  # If set, displayed under the main title.
+  subtitle: "A nice blog."
 
-- `subtitle` string: If set, displayed under the main title.
-- `showPoweredBy` boolean: If `true`, display a shoutout to Hugo and this theme.
-- `copyrightHolder` string: Inserts the value in the default copyright notice.
-- `copyright` string: Custom copyright notice.
-- `math` boolean: Site wide kill switch for Latex support
-- `codeBlocksDark` boolean: If `true`, code blocks will use a dark theme.
-- `marginNoteInd` string: (NEW) Custom indicator for margin notes, with suggestions in comment. (Only displayed on mobile devices or inside `cols` shortcode.)
-- `sansSubtitle` boolean: If `true`, all subtitles (`h2` \& `h3`) will use up-right and sans-serif font. (As seen in _Visual Display of Quantitative Information_.)
-- (`centerArticle` boolean: Not implemented yet)
+  # If `true`, display a shoutout to Hugo and this theme.
+  showPoweredBy: true
 
-**Socials**
+  # Inserts the value in the default copyright notice.
+  copyrightHolder: "Author Name"
 
-_(The followings have not been tested for this repo, use at your own risk.)_
+  # Custom copyright notice.
+  copyright: "© 2025 Author Name"
 
-You can add links to your social media profile by using thoses parameters:
+  # Site wide kill switch for Latex support.
+  math: false
 
-- `github`: string
-- `gitlab`: string
-- `twitter`: string
-- `linkedin`: string
-- `patreon`: string
-- `youtube`: string
-- `medium`: string
-- `reddit`: string
-- `stackoverflow`: string
-- `instagram`: string
-- `mastodon`: string
-- `orcid`: string
-- `google_scholar`: string
+  # If `true`, code blocks will use a dark theme.
+  codeBlocksDark: true
 
-Please see [`exampleSite/config.yaml`](https://github.com/loikein/hugo-tufte/blob/main/exampleSite/config.yaml#L47) to see the full implementation with exemples.
+  # (NEW) Custom indicator for margin notes. (Only displayed on mobile devices or inside `cols` shortcode.)
+  # Suggestions: "⊕", "⊗", "¶"
+  marginNoteInd: "⊕"
+
+  # If `true`, all subtitles (`h2` & `h3`) will use up-right and sans-serif font.
+  # (As seen in _Visual Display of Quantitative Information_.)
+  sansSubtitle: true
+  
+  # Show table of contents in all singles.
+  toc: true
+  
+  # Social media links in footer
+  # Example: The github value below will include a link to
+  # 'https://github.com/gohugoio' in the footer.
+  github: "gohugoio"
+  #gitlab: ""
+  #twitter: ""
+  #linkedin: ""
+  #patreon: ""
+  #youtube: ""
+  #medium: ""
+  #reddit: ""
+  #stackoverflow: ""
+  #instagram: ""
+  #mastodon: ""
+  #orcid: ""
+  #google_scholar: ""
+```
 
 ### Page Parameters
 

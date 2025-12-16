@@ -1,4 +1,4 @@
-{{ if .Params.toc  }}
+{{ if or (.Params.toc) (.Site.Params.toc) }}
 <section>
   <details closed class="toc">
     <summary>Table of Contents</summary>
