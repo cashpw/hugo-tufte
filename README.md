@@ -1,61 +1,22 @@
 # Tufte Hugo Theme
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md) [![Test Build](https://github.com/loikein/hugo-tufte/actions/workflows/test-build.yml/badge.svg)](https://github.com/loikein/hugo-tufte/actions/workflows/test-build.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a3e11e2-0209-40bb-8570-c3eb9b8471dc/deploy-status)](https://app.netlify.com/sites/huto-tufte/deploys)
-
-## History of this project
-
 Hugo-Tufte is a minimalist blog-like theme for the
 [static site generator Hugo](https://gohugo.io) that
 attempts to be a faithful implementation of the
 [Tufte-css](https://github.com/edwardtufte/tufte-css) project. The current version supports mathematical typesetting via [KaTeX](https://katex.org/).
 
-- The original repo: [shawnohare/hugo-tufte](https://github.com/shawnohare/hugo-tufte)
-- Second repo: [slashformotion/hugo-tufte](https://github.com/slashformotion/hugo-tufte)
-- This ([loikein/hugo-tufte](https://github.com/loikein/hugo-tufte)) is now the _de facto_ third repo although my original intension was only to make a few tweaks.
+TODO: Example website.
 
-## Quickstart
+## Install
 
-### Prerequisite: Hugo Extended
+1. Ensure you're running [hugo *extended*](https://gohugo.io/installation/) (required for SCSS)
+1. Add this repository to your hugo site's `themes` folder. We recommend including it as a submodule (`git su`)
 
-You'll need to install Hugo Extended for this theme to test it locally, since this theme uses SCSS.
-
-- On Windows:
-  - Using [Chocolatey](https://chocolatey.org/):
     ```shell
-    choco install hugo-extended # remember, you might need admin privs
+    cd <your site>/themes
+    git submodule add https://github.com/cashpw/hugo-tufte
     ```
-- On macOS:
-  + Using [Homebrew](https://brew.sh/):
-    ```shell
-    brew install hugo
-    ```
-
-### Check out the example site
-
-```shell
-git clone https://github.com/loikein/hugo-tufte.git
-cd hugo-tufte/exampleSite
-hugo server --buildDrafts --disableFastRender
-```
-
-Then open `localhost:1313` or wherever it says in browser.
-
-The showcase posts are:
-
-- `The big old test page`
-- `Tufte CSS`
-
-### For a new site
-
-```shell
-hugo new site <your-site-name>
-cd <your-site-name>/themes/
-git clone https://github.com/loikein/hugo-tufte.git
-```
-
-Add `theme: 'hugo-tufte'` to your `config.yaml` to let your site know to actually use _this_ theme, specifically.
-
-Then run `hugo server --buildDrafts --disableFastRender` and open `localhost:1313` or wherever it says in browser.
+1. Set the `theme` value in your site's configuration to `hugo-tufte`
 
 ## Features
 
@@ -67,7 +28,7 @@ For usage and examples, refer to [./exampleSite/content/posts/tufte-features.md 
 
 Downside: LaTeX in post title is no longer supported.
 
-### Site Parameters
+### Site parameters
 
 `params` for this theme are:
 
@@ -128,3 +89,10 @@ For usage and examples, refer to [./exampleSite/content/posts/tufte-features.md 
 - `epigraph`
 - `marginnote`
 - `sidenote`
+        
+## History of this project
+
+- The original repo: [shawnohare/hugo-tufte](https://github.com/shawnohare/hugo-tufte)
+- Second repo: [slashformotion/hugo-tufte](https://github.com/slashformotion/hugo-tufte)
+- This ([loikein/hugo-tufte](https://github.com/loikein/hugo-tufte)) is now the _de facto_ third repo although my original intension was only to make a few tweaks.
+
