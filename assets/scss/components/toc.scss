@@ -1,9 +1,5 @@
 /* We utilize the html5 summary tags in order to create a post archive */
 /* with built-in folding. */
-details {
-    border-radius: 3px;
-}
-
 details summary {
     vertical-align: top;
     padding: .3em .5em;
@@ -23,25 +19,42 @@ details summary.year {
 .toc summary {
     font-size: 1.5rem;
     margin-bottom: -1.5rem;
-    padding-left: 0;
+    padding-left: 0.75em;
+    border-left: 1px solid #111;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 
-.toc {
-	// float: right;
-	/*padding: 0rem 1rem 1rem 1rem;*/
-    /*margin-top: 1rem;*/
-	// border-left: 1px solid #eee;
+.toc nav {
+    padding-top: 0.5em;
+    border-left: 1px solid #111;
 }
 
 .toc ul {
-	list-style: none;
-	display: block;
-	/*margin-top: 0.75rem;*/
-	padding: 0;
-    width: 87.5%;
+  display: block;
+  width: 87.5%;
+}
+
+.toc > ul > li {
 }
 
 .toc li {
-    line-height: 0.5rem;
-    margin: 1rem;
+    line-height: 2rem;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .toc nav {
+      border-color: #ddd;
+  }
+
+  .toc summary {
+      border-color: #ddd;
+  }
 }
