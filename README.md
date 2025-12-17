@@ -64,6 +64,9 @@ params:
   # When true, show a paginated list of posts on the home page.
   showPostsOnHome: false
   
+  # When true, show previous/next post links at bottom of posts.
+  showPreviousNextPost: false
+  
   # Social media links in footer
   # Example: The github value below will include a link to
   # 'https://github.com/gohugoio' in the footer.
