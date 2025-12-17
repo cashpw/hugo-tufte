@@ -63,7 +63,7 @@ mark {
 /* ------------------------------------------------------------------------ */
 /* Styling for listing pages. */
 /* ------------------------------------------------------------------------ */
-.list-page {
+.list-section {
     ul {
         list-style-type: none;
         margin: 0;
@@ -76,7 +76,7 @@ mark {
         /*font-size: 95%;*/
     }
 }
-.list-page .list-date {
+.list-section .list-date {
     display: inline-block;
     font-size: 0.75em;
     width: 13ch;
