@@ -7,25 +7,14 @@
 {{ partial "content.header.html" . }}
 
 <section class="list-page">
-{{ range .Data.Pages.GroupByDate "2006" }}
-  <ul>
-  <li class="year">{{ .Key }} ({{ len .Pages }})</li>
-    {{ range .Pages.GroupByDate "January" }}
-    <ul>
-    <li>{{ .Key }} ({{ len .Pages }})</li>
-      {{ range .Pages }}
       <ul>
+      {{ range .Pages }}
       <li>
-        <span class="list-date">{{ .Date.Format "Jan 2" }} &middot;</span>
+        <span class="list-date">{{ .Date.Format "Jan 2, 2006" }}</span>
         <a href="{{ .RelPermalink }}">{{.Title}}</a>
       </li>
-      </ul>
       {{ end }}
-    </li>
-    </ul>
-    {{ end }}
-  </ul>
-  {{ end }}
+      </ul>
 </section>
 
 {{ partial "footer.html" . }}
