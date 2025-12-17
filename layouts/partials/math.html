@@ -15,17 +15,26 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
-            // delimiters: [
-            //     {left: "$$\n", right: "\n$$", display: true},
-            //     {left: "$$", right: "$$", display: false},
-            //     {left: "\\[", right: "\\]", display: true},
-            //     {left: "\\(", right: "\\)", display: false}
-            // ],
+            delimiters: [
+              {left: "$$", right: "$$", display: true},
+              {left: "$", right: "$", display: false},
+              {left: "\\(", right: "\\)", display: false},
+              {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+              {left: "\\begin{align}", right: "\\end{align}", display: true},
+              {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+              {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+              {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+              {left: "\\[", right: "\\]", display: true}
+            ],
             trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
             macros: {
               "\\eqref": "\\href{###1}{(\\text{#1})}",
               "\\ref": "\\href{###1}{\\text{#1}}",
-              "\\label": "\\htmlId{#1}{}"
+              "\\label": "\\htmlId{#1}{}",
+              "\\bigo": "O(#1)",
+              "\\littleo": "o(#1)",
+              "\\bigtheta": "\\Theta(#1)",
+              "\\bigomega": "\\Omega(#1)",
             }
         });
     });

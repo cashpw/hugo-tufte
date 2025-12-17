@@ -10,7 +10,7 @@ TODO: Example website.
 ## Install
 
 1. Ensure you're running [hugo *extended*](https://gohugo.io/installation/) (required for SCSS)
-1. Add this repository to your hugo site's `themes` folder. We recommend including it as a submodule (`git su`)
+1. Add this repository to your hugo site's `themes` folder. We recommend including it as a submodule:
 
     ```shell
     cd <your site>/themes
@@ -28,6 +28,8 @@ For usage and examples, refer to [./exampleSite/content/posts/tufte-features.md 
 
 Downside: LaTeX in post title is no longer supported.
 
+Future feature: Automatically enable KaTeX on all pages which require it by searching for KaTeX delimiters.
+
 ### Site parameters
 
 ``` yaml
@@ -44,8 +46,11 @@ params:
   # Custom copyright notice.
   copyright: "© 2025 Author Name"
 
-  # Include Katex rendering on all pages.
-  math: true
+  # Include KaTeX rendering on all pages (even those without KaTeX).
+  math: false
+
+  # Include KaTeX rendering only on the pages which use KaTeX.
+  includeMathWhenNeeded: true
 
   # If `true`, code blocks will use a dark theme.
   codeBlocksDark: true

@@ -7,8 +7,13 @@
 {{ block "main" . }}{{ end }}
 
 {{ if or .Params.math .Site.Params.math }}
-{{ partial "math.html" . }}
+  {{ partial "math.html" . }}
+{{ else if .Site.Params.includeMathWhenNeeded }}
+  {{ if or (findRE `\$\$` .RawContent) (findRE `\\\[` .RawContent) (findRE `\\\(` .RawContent) }}
+    {{ partial "math.html" . }}
+  {{ end }}
 {{ end }}
+
 
 </body>
 
