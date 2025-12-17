@@ -44,8 +44,8 @@ params:
   # Custom copyright notice.
   copyright: "© 2025 Author Name"
 
-  # Site wide kill switch for Latex support.
-  math: false
+  # Include Katex rendering on all pages.
+  math: true
 
   # If `true`, code blocks will use a dark theme.
   codeBlocksDark: true
