@@ -8,7 +8,7 @@
 {{- $cdn := .Site.Params.KaTeXCDN | default "//cdn.jsdelivr.net/npm" -}}
 {{- $katex_src_base := printf "%s/katex@%s" $cdn $version -}}
 
-<link rel="stylesheet" href="{{ $katex_src_base }}/dist/katex.min.css" crossorigin="anonymous">
+<link defer rel="stylesheet" href="{{ $katex_src_base }}/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="{{ $katex_src_base }}/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="{{ $katex_src_base }}/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <!-- do not add onload attributes, breaks settings below -->
