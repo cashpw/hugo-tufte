@@ -61,6 +61,9 @@ params:
   # Show table of contents in all singles.
   toc: true
   
+  # When true, show a paginated list of posts on the home page.
+  showPostsOnHome: false
+  
   # Social media links in footer
   # Example: The github value below will include a link to
   # 'https://github.com/gohugoio' in the footer.

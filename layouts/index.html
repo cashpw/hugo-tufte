@@ -6,6 +6,7 @@
   {{ . }}
   </section>
 {{ end }}
+{{- if .Site.Params.showPostsOnHome -}}
 <section class="page-list">
 {{ $pgFilter1 := where .Site.RegularPages "Draft" false }}
 {{ $pgFilter2 := where .Site.RegularPages "Params.date" "!=" nil }}
@@ -48,6 +49,7 @@
 {{ end }}
 </span>
 
+{{ end }}
 {{ end }}
 
 {{ partial "footer.html" . }}
