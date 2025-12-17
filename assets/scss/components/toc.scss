@@ -47,14 +47,3 @@ details summary.year {
 .toc li {
     line-height: 2rem;
 }
-
-
-@media (prefers-color-scheme: dark) {
-  .toc nav {
-      border-color: #ddd;
-  }
-
-  .toc summary {
-      border-color: #ddd;
-  }
-}
