@@ -66,7 +66,9 @@ params:
   # Show table of contents in all singles.
   toc: true
   
-  # When true, show a paginated list of posts on the home page.
+  # When 'list', show a one-post-per-line list of post titles.
+  # When 'preview', show a paginated list of post previews.
+  # When false, omit posts entirely from the home page.
   showPostsOnHome: false
   
   # When true, show previous/next post links at bottom of posts.
