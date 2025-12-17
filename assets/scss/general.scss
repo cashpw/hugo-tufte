@@ -66,7 +66,8 @@ mark {
 .list-page {
     ul {
         list-style-type: none;
-        margin: -0.25em;
+        margin: 0;
+        padding: 0;
         width: 87.5%;
         max-width: 45rem;
     }
@@ -76,8 +77,9 @@ mark {
     }
 }
 .list-page .list-date {
-    display: inline;
+    display: inline-block;
     font-size: 0.75em;
+    width: 13ch;
     /* padding-right: 2em; */
     /* margin-right: 2em; */
 }
@@ -168,6 +170,48 @@ mjx-container[jax="CHTML"][display="true"],
 .sidenote code,
 .marginnote code {
     font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .marginnote-ind .ind {
+    font-size: 1.5em;
+    line-height: 1;
+  }
+
+  label.margin-toggle {
+    display: inline-block;
+    border: 1px solid #111;
+    padding: 0 0.5ch;
+    margin: 0 0.5ch;
+    text-align: center;
+    border-radius: 0.5ch;
+    font-family: monospace;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &::before {
+      content: "+";
+      margin-right: 0.2em;
+      top: 0;
+      left: 0;
+    }
+
+    &:has(+ :checked) {
+      &::before {
+        content: "-";
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+      label.margin-toggle {
+          border-color: #ddd;
+      }
+  }
 }
 
 /* ------------------------------------------------------------------------ */
