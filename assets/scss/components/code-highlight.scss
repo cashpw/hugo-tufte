@@ -1,12 +1,9 @@
-$ht-code-border-radius: .4em;
+$ht-code-border-radius: 0.4em;
 .highlight {
-    width: 50%;
+    width: 55%;
     overflow-x: scroll;
-    // border-radius: $ht-code-border-radius;
-    margin-top: 1.4em;
-    margin-bottom: 1.4em;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
+    margin: 1.4em 0;
+    margin-left: 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
 
@@ -14,20 +11,28 @@ $ht-code-border-radius: .4em;
         display: none;
     }
 
+    pre {
+        border-radius: $ht-code-border-radius;
+        padding: 1em;
+    }
+
     code {
+        width: 100%;
+        padding: 0;
+        margin: 0;
         font-size: 1rem;
         display: block;
     }
 
-    &>.chroma {
+    & > .chroma {
         margin: 0;
     }
 
-    &>.chroma .hl {
+    & > .chroma .hl {
         // border-radius: $ht-code-border-radius / 2;
         display: block;
 
-        &::before{
+        &::before {
             content: "> ";
             // font-family: "Noto Emoji";
             font-family: inherit;
@@ -37,12 +42,12 @@ $ht-code-border-radius: .4em;
         }
     }
 
-    &>div.chroma>table.lntable{
+    & > div.chroma > table.lntable {
         overflow: initial;
         // margin: $ht-code-border-radius 0 $ht-code-border-radius 0;
         & td:first-of-type {
-            & span:not(& span>span) {
-                padding: 0 .75em 0 .5em;
+            & span:not(& span > span) {
+                padding: 0 0.75em 0 0.5em;
             }
         }
 
@@ -52,27 +57,26 @@ $ht-code-border-radius: .4em;
         }
     }
 
-    &>.chroma>code {
+    & > .chroma > code {
         width: max-content;
-        margin-top: .5em;
-        margin-bottom: .5em;
-        margin-left: .5em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: 0.5em;
 
-        &>span.hl{
-            margin-left: -.5em;
-            padding-left: .5em;
+        & > span.hl {
+            margin-left: -0.5em;
+            padding-left: 0.5em;
         }
     }
 }
 
-
-@media screen and (max-width: 760px) {
+@media (max-width: 760px) {
     .highlight {
-        width: 90%;
+        width: 100%;
     }
 }
 
 // fix #48 => https://github.com/slashformotion/hugo-tufte/issues/48
-ul>li>div.highlight {
+ul > li > div.highlight {
     width: 100%;
 }
