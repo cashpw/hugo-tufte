@@ -1,8 +1,8 @@
-{{ if or (.Params.toc) (.Site.Params.toc) }}
+{{- if .Page.Fragments.Headings }} {{- if or (.Params.toc) (.Site.Params.toc) }}
 <section>
   <details class="toc" closed>
     <summary>Table of Contents</summary>
     {{ .TableOfContents }}
   </details>
 </section>
-{{ end  }}
+{{- end }} {{- end }}
