@@ -2,7 +2,7 @@
 /* with built-in folding. */
 details summary {
     vertical-align: top;
-    padding: .3em .5em;
+    padding: 0.3em 0.5em;
     outline: none;
     /*color: rgba(65, 70, 75, 1);*/
 }
@@ -14,31 +14,36 @@ details summary.year {
 // details[open] summary {
 // }
 
-
 /* Table of Contents */
-.toc summary {
-    font-size: 1.5rem;
-    margin-bottom: -1.5rem;
-    padding-left: 0.75em;
-    border-left: 1px solid #111;
+.toc {
+    summary {
+        font-size: 1.4rem;
+        margin-bottom: -1.5rem;
+        padding-left: 0.75em;
+        border-left: 1px solid #111;
 
-    &:hover {
-        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
+        }
     }
 
-    &:focus {
-        outline: none;
+    nav {
+        padding-top: 0.5em;
+        border-left: 1px solid #111;
+
+        ul {
+            display: block;
+            width: 87.5%;
+        }
+
+        > ul {
+            margin-bottom: 0;
+        }
     }
-}
-
-.toc nav {
-    padding-top: 0.5em;
-    border-left: 1px solid #111;
-}
-
-.toc ul {
-  display: block;
-  width: 87.5%;
 }
 
 .toc > ul > li {
