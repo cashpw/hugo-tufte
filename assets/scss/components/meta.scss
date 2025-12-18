@@ -7,6 +7,32 @@
     margin-top: 1em;
 }
 
+ul.content-meta {
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+
+        &::after {
+            content: "·";
+            padding: 0 0.5em;
+        }
+
+        &:last-child {
+            &::after {
+                content: "";
+            }
+        }
+    }
+}
+.content-meta li {
+  display: inline-block;
+  padding-right: 1em;
+}
+
 .content-meta .author {
     /*color: rgb(90, 20, 55)*/
     // color: rgba(65, 70, 75, 1);
