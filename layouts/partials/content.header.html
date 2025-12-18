@@ -24,9 +24,11 @@
   <li class="author">{{ .Params.author }}</li>
   {{- end -}}
 
-  {{- range .Params.tags -}}
-  <li><a href="{{ "/tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
-  {{- end -}}
+  {{- if not .Site.Params.hideTags }}
+    {{- range .Params.tags -}}
+    <li><a href="{{ "/tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+    {{- end }}
+  {{- end }}
 </span>
 {{- end -}}
 </section>

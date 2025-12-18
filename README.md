@@ -74,6 +74,9 @@ params:
   # When true, show previous/next post links at bottom of posts.
   showPreviousNextPost: false
   
+  # When true, hide tags in post metadata
+  hideTags: true
+  
   # Social media links in footer
   # Example: The github value below will include a link to
   # 'https://github.com/gohugoio' in the footer.
