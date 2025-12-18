@@ -1,7 +1,9 @@
+{{- if .Site.Menus.nav }}
 <nav class="menu">
-    <ul>
-    {{ range .Site.Menus.nav  }}
-        <li><a href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a></li>
+  <ul>
+    {{ range .Site.Menus.nav }}
+    <li><a href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a></li>
     {{ end }}
-    </ul>
+  </ul>
 </nav>
+{{- end }}
