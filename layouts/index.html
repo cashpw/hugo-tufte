@@ -1,65 +1,60 @@
 {{ define "main" }}
 <article id="main" class="home-page">
-{{ partial "brand.html" . }}
-{{ with .Content }}
-  <section>
-  {{ . }}
-  </section>
-{{ end }}
-{{- $posts := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-{{- $notDrafts := where .Site.RegularPages "Draft" false }}
-{{- $withDate := where .Site.RegularPages "Params.date" "!=" nil }}
-{{- $pages := $posts | intersect $notDrafts | intersect $withDate }}
-{{- if eq .Site.Params.showPostsOnHome "list" -}}
+  {{ partial "brand.html" . }} {{ with .Content }}
+  <section>{{ . }}</section>
+  {{ end }} {{- $posts := where .Site.RegularPages "Type" "in"
+  .Site.Params.mainSections }} {{- $notDrafts := where .Site.RegularPages
+  "Draft" false }} {{- $withDate := where .Site.RegularPages "Params.date" "!="
+  nil }} {{- $pages := $posts | intersect $notDrafts | intersect $withDate }}
+  {{- if eq .Site.Params.showPostsOnHome "list" -}}
   <section class="list-section">
-    <ul>
-    {{- range $pages }}
-      <li>
-        <span class="list-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-        <a href="{{ .RelPermalink }}">{{.Title}}</a>
-      </li>
-    {{- end }}
-    </ul>
+    <h2>Posts</h2>
+    <table>
+      <tbody>
+        {{- range $pages }}
+        <tr>
+          <td class="list-date"> <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></td>
+          <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+        </tr>
+        {{- end }}
+      </tbody>
+    </table>
   </section>
-{{- else if eq .Site.Params.showPostsOnHome "preview" -}}
+  {{- else if eq .Site.Params.showPostsOnHome "preview" -}}
   <section class="page-list">
-  {{ range (.Paginate $pages).Pages }}
+    {{ range (.Paginate $pages).Pages }}
     <h2 class="content-title">
-    {{ if .IsNode }}
-    <a href="{{ .Permalink }}">{{ .Title}}</a>
-    {{ else }}
-    <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }}&nbsp;:: Draft{{end}}</a>
-    {{ end }}
+      {{ if .IsNode }}
+      <a href="{{ .Permalink }}">{{ .Title}}</a>
+      {{ else }}
+      <a href="{{ .RelPermalink }}"
+        >{{ .Title }}{{ if .Draft }}&nbsp;:: Draft{{end}}</a
+      >
+      {{ end }}
     </h2>
 
     {{ if .Description }}
     <p>{{ .Description }}</p>
-    {{ else }}
-    {{ if .Site.Params.showSummary }}
+    {{ else }} {{ if .Site.Params.showSummary }}
     <p>{{ truncate 140 .Summary }}</p>
-    {{ end }}
-    {{ end }}
-  {{ end }}
+    {{ end }} {{ end }} {{ end }}
   </section>
 
   {{ if and (.Paginator) (gt .Paginator.TotalPages 1) }}
-    <hr />
-    <span class="previous-page">
+  <hr />
+  <span class="previous-page">
     {{ if .Paginator.HasPrev }}
-      <a class="link-reverse" href="{{.Paginator.Prev.URL}}">«</a>
+    <a class="link-reverse" href="{{.Paginator.Prev.URL}}">«</a>
     {{ end }}
-    </span>
-    <span class="pagination-indicator">
+  </span>
+  <span class="pagination-indicator">
     {{.Paginator.PageNumber}} / {{.Paginator.TotalPages}}
-    </span>
-    <span class="next-page">
+  </span>
+  <span class="next-page">
     {{ if .Paginator.HasNext }}
-      <a class="link-reverse" href="{{.Paginator.Next.URL}}">»</a>
+    <a class="link-reverse" href="{{.Paginator.Next.URL}}">»</a>
     {{ end }}
-    </span>
-  {{ end }}
-{{ end }}
-
-{{ partial "footer.html" . }}
+  </span>
+  {{ end }} {{ end }} {{ partial "footer.html" . }}
 </article>
 {{ end }}

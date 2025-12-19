@@ -115,21 +115,25 @@ section > blockquote {
 }
 
 table:not(.lntable) {
-  margin-top: 1.4em;
+  border-collapse: collapse;
+  margin: 1.4em 0;
   font-size: 1.4rem;
   width: auto; /* making booktabs style tables the unstyled default in case someone uses Markdown styling */
   /* margin: 0 auto; */
   /* border-spacing: 0px; */
 }
 
-table:not(.lntable) tr th {
+table:not(.lntable) thead {
   border-bottom: 1px solid #111;
-  text-transform: uppercase;
+}
+
+table:not(.lntable) tr {
 }
 
 table:not(.lntable) tr th,
 table:not(.lntable) tr td {
-  padding-right: 0.5rem;
+  padding: 1rem 0 0;
+  line-height: 1.4rem;
 }
 
 table.lntable {
