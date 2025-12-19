@@ -1,15 +1,17 @@
 /* Content meta-data such as author, publication date, etc. */
-.content-meta {
+ul.content-meta {
     display: block;
     /*color: rgba(155, 155, 155, 1);*/
     // color: rgba(100, 105, 110, 1);
     font-size: 1.1rem;
     margin-top: 1em;
-}
-
-ul.content-meta {
+    line-height: 1em;
     list-style: none;
     padding: 0;
+
+    svg {
+        vertical-align: bottom;
+    }
 
     li {
         display: inline-block;
@@ -29,8 +31,8 @@ ul.content-meta {
     }
 }
 .content-meta li {
-  display: inline-block;
-  padding-right: 1em;
+    display: inline-block;
+    padding-right: 1em;
 }
 
 .content-meta .author {
