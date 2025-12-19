@@ -80,10 +80,14 @@ mark {
   background: #f0d9bb;
 }
 
-blockquote {
+section > blockquote {
   margin-left: 1rem;
   padding-left: 2rem;
   border-left: 1px solid #111;
+}
+
+.epigraph blockquote footer {
+  text-align: right;
 }
 
 /* ------------------------------------------------------------------------ */
