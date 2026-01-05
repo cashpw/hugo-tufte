@@ -81,9 +81,14 @@ mark {
 }
 
 section > blockquote {
-  margin-left: 1rem;
+  width: 55%;
+  margin-left: 0;
   padding-left: 2rem;
   border-left: 1px solid #111;
+}
+
+section > blockquote p {
+  width: 100%;
 }
 
 .epigraph blockquote footer {
