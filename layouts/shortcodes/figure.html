@@ -1,5 +1,8 @@
 {{ $alt := .Get "alt" | default "Image" }}
 {{ $type := .Get "type" | default "normal" }}
+{{- if eq (.Get "class") "fullwidth" }}
+{{- $type = "full" }}
+{{- end }}
 {{- $ind := .Get "ind" | default .Site.Params.marginNoteInd -}}
 
 <!-- get a default label just in case -->
