@@ -80,19 +80,35 @@ mark {
   background: #f0d9bb;
 }
 
-section > blockquote {
-  width: 55%;
+blockquote {
+  padding: 1rem 0 1rem 2rem;
+  border-left: 1px solid #999;
   margin-left: 0;
-  padding-left: 2rem;
-  border-left: 1px solid #111;
+  position: relative;
 }
 
-section > blockquote p {
+blockquote > *:first-child {
+  margin-top: 0;
+}
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+section > blockquote {
+  width: 55%;
+}
+
+section > blockquote * {
   width: 100%;
 }
 
 .epigraph blockquote footer {
   text-align: right;
+}
+
+section > div {
+  font-size: 1.4rem;
+  width: 90%;
 }
 
 /* ------------------------------------------------------------------------ */
