@@ -95,10 +95,16 @@ blockquote > *:last-child {
 }
 
 section > blockquote {
+  /* Make blockquotes themselves, not the content within them, narrow. */
   width: 55%;
 }
+@media (max-width: 760px) {
+  section > blockquote {
+    width: 100%;
+  }
+}
 
-section > blockquote * {
+section > blockquote > * {
   width: 100%;
 }
 
